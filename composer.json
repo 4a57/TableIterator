@@ -1,0 +1,16 @@
+{
+    "name": "jacek.wisniewski/table-iterator",
+    "description": "MySQL big table iterator",
+    "authors": [
+        {
+            "name": "Jacek Wiśniewski",
+            "email": "jacek@wisja.pl"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
