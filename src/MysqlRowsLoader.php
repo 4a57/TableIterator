@@ -21,7 +21,7 @@ class MysqlRowsLoader implements RowsLoader
     public function __construct(\mysqli $db, string $tableName)
     {
         $this->db = $db;
-        $this->tableName = $tableName;
+        $this->tableName = $this->db->escape_string($tableName);
     }
 
     /**
@@ -34,7 +34,7 @@ class MysqlRowsLoader implements RowsLoader
     {
         $query = <<<SQL
 SELECT *
-FROM `{$this->db->escape_string($this->tableName)}`
+FROM `{$this->tableName}`
 LIMIT {$offset}, {$limit}
 SQL;
         $result = $this->db->query($query);
